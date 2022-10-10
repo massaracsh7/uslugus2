@@ -5,6 +5,10 @@ import {modalController} from "./modules/modalController";
 import {selectController} from "./modules/selectController";
 import {showPassword} from "./modules/showPassword";
 import {choicesController} from "./modules/choices";
+import {avatarController} from "./modules/avatarController";
+import {getCategory} from "./modules/getCategory";
+import {renderList} from "./modules/renderList";
+import {searchControl} from "./modules/searchControl";
 
 const init = () => {
   modalController( {
@@ -62,6 +66,14 @@ const init = () => {
 
   choicesController();
 
+  const crp = avatarController({
+  inputFile: '.avatar__input',
+    uploadResult: '.avatar__result',
+  });
+
+  getCategory();
+  renderList();
+  searchControl();
 };
 
 init();
