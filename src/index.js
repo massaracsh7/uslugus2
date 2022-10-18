@@ -9,6 +9,9 @@ import {avatarController} from "./modules/avatarController";
 import {getCategory} from "./modules/getCategory";
 import {renderList} from "./modules/renderList";
 import {searchControl} from "./modules/searchControl";
+import {ratingController} from "./modules/ratingController";
+import {signUpController} from "./modules/sign";
+import {filterList} from "./modules/filterList";
 
 const init = () => {
   modalController( {
@@ -57,7 +60,7 @@ const init = () => {
     openBlock: '.category__list',
     closeBtn: '.category__btn',
     handlerChange: (value) => {
-      console.log(value);
+      filterList(value);
     }
 
   });
@@ -66,14 +69,14 @@ const init = () => {
 
   choicesController();
 
-  const crp = avatarController({
-  inputFile: '.avatar__input',
-    uploadResult: '.avatar__result',
-  });
+
 
   getCategory();
   renderList();
   searchControl();
+  ratingController();
+
+  signUpController();
 };
 
 init();
